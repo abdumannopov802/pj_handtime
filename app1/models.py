@@ -8,4 +8,5 @@ class AddProductModel(models.Model):
     price = models.IntegerField()
 
     def __str__(self) -> str:
-        return f"{self.brand}: {self.name}"
+        return f"{self.name}: {self.price}"
+    

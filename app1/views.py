@@ -1,18 +1,23 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from .models import *
 # Create your views here.
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
+def aboutView(request):
+    return render(request=request, template_name='about.html', context={})
     
-class ContactView(TemplateView):
-    template_name = 'contact.html'
+def contactView(request):
+    return render(request=request, template_name='contact.html', context={})
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
+def indexView(request):
+    data = AddProductModel.objects.all()
+    count = []
+    for i in range(1,len(data)+1):
+        count.append(i)
+    return render(request=request, template_name='index.html', context={'products':data, 'range': count})
 
-class ProductView(TemplateView):
-    template_name = 'product.html'
+def productView(request):
+    data = AddProductModel.objects.all()
+    return render(request=request, template_name='product.html', context={'products':data})
 
-class TestimonialView(TemplateView):
-    template_name = 'testimonial.html'
+def testimonialView(request):
+    return render(request=request, template_name='testimonial.html', context={})
