@@ -340,11 +340,12 @@
         </h2>
       </div>
       {% for product in products %}
+      {% if product.id <= 3 %}
       <div class="product_container">
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w1.png' %}" alt="">
+              <img src="/media/{{product.image}}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
@@ -375,6 +376,7 @@
             </a>
           </div>
         </div>
+        {% endif %}
       {% endfor %}
       </div>
     </div>
@@ -388,11 +390,12 @@
         </h2>
       </div>
       {% for product in products %}
+      {% if product.id > 3 and product.id < 7 %}
       <div class="product_container">
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w1.png' %}" alt="">
+              <img src="/media/{{product.image}}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
@@ -423,6 +426,7 @@
             </a>
           </div>
         </div>
+        {% endif %}
       {% endfor %}
       </div>
     </div>
@@ -436,11 +440,12 @@
         </h2>
       </div>
       {% for product in products %}
+      {% if product.id > 6 and product.id < 10 %}
       <div class="product_container">
         <div class="box">
           <div class="box-content">
             <div class="img-box">
-              <img src="{% static 'images/w1.png' %}" alt="">
+              <img src="/media/{{product.image}}" alt="">
             </div>
             <div class="detail-box">
               <div class="text">
@@ -471,6 +476,7 @@
             </a>
           </div>
         </div>
+        {% endif %}
       {% endfor %}
       </div>
     </div>
